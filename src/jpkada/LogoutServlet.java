@@ -17,7 +17,7 @@ public class LogoutServlet extends HttpServlet {
             throws ServletException, IOException {
         UserService service = UserServiceFactory.getUserService();
         String url = req.getRequestURI();
-        String logouturl = service.createLogoutURL("/public.html");
+        String logouturl = service.createLogoutURL("/index.html");
         resp.sendRedirect(logouturl);
     }
      
