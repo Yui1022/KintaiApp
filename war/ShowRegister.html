@@ -11,20 +11,21 @@
             var res = '';
  			/*for (var i = 0;i < json.length;i++){*/			
             if (json.length == 1){
-                res += '<tr><td>' + json[i].id +'</td></tr>';
-                res += '<tr><td>' + json[i].name +'</td></tr>';
-                res += '<tr><td>' + json[i].time +'</td></tr>';
-                res += '<tr><td>' + json[i].date +'</td></tr>';
+                res += '<tr><td>' + json[0].id +'</td></tr>';
+                res += '<tr><td>' + json[0].name +'</td></tr>';
+                res += '<tr><td>' + json[0].time +'</td></tr>';
+                res += '<tr><td>' + json[0].date +'</td></tr>';
             } else {
                 for (var i = 0;i < json.length;i++){
-                    res += '<tr><td><a href="javascript:return false;" onclick="getData(' + json[i].id +');">' + json[i].id + '</a></td>';
-                    res += '<td><a href="' + json[i].name + '">' + json[i].time + '</a></td>'
-                    res += '<td>'+json[i].date + '</td>' +
+                    res += '<tr><td><a href="javascript:return false;" onclick="getData(' + json[i].id +');">' + json[i].id + '</a></td></tr>';
+                    res += '<tr><td>' + json[i].name + '</td></tr>';
+                    res +='<tr><td>' + json[i].time + '</td></tr>';
+                    res += '<tr><td>'+json[i].date + '</td></tr>';
                 }
-            }
-            var obj = document.getElementById("datatable");
-            obj.innerHTML = res;
         }
+         var obj = document.getElementById("datatable");
+            obj.innerHTML = res;
+            }
         //-->
         </script>
 </head>

@@ -19,8 +19,8 @@ function getData(id){
         alert("HttpRequestが取得できませんでした。");
         return;
     }
-    var uri = "/NewKintai";
-    if (id != null) uri = "/NewKintai?id=" + id;
+    var uri = "/regkintai";
+    if (id != null) uri = "/regkintai?id=" + id;
     request.open("GET",uri,true);
     request.setRequestHeader("User-Agent","XMLHttpRequest");
     request.onreadystatechange = function(){

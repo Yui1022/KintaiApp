@@ -20,8 +20,33 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>CheckKintai</servlet-name>
 		<url-pattern>/chkintai</url-pattern>
 	</servlet-mapping>
-	<welcome-file-list>
+	<servlet>
+		<servlet-name>UserServlet</servlet-name>
+		<servlet-class>jpkada.CheckKintai</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CheckKintai</servlet-name>
+		<url-pattern>/chkintai</url-pattern>
+	</servlet-mapping>
+		<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
-</web-app>
 
+	
+	<filter>
+    <filter-name>logincheck</filter-name>
+    <filter-class>jpkada.LoginCheckFilter</filter-class>
+</filter>
+<filter-mapping>
+    <filter-name>logincheck</filter-name>
+    <url-pattern>/private.jsp</url-pattern>
+</filter-mapping>
+<servlet>
+    <servlet-name>logout</servlet-name>
+    <servlet-class>jpkada.LogoutServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>logout</servlet-name>
+    <url-pattern>/logout</url-pattern>
+</servlet-mapping>    
+</web-app>
